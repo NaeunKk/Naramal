@@ -6,17 +6,10 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedScenePath-0:
-      value: 22424703114646680e0b0227036c6c111b07142f1f2b233e2867083debf42d
-      flags: 0
-    RecentlyUsedScenePath-1:
       value: 224247031146460b5d313f21152d5a0359331d3c630627353827521de3e52136acf238e0f323
       flags: 0
-    RecentlyUsedScenePath-2:
-<<<<<<< HEAD
-      value: 224247031146460b5d313f21152d5a0359331d3c631b273e621a1c3dacf53a31f6fe
-=======
-      value: 224247031146460b5d313f21152d5a0359331d3c6302333e25265219f7ee3c37acf238e0f323
->>>>>>> 2df70c8c48c7d9419bc540828658fedbb5979e68
+    RecentlyUsedScenePath-1:
+      value: 224247031146460b5d313f21152d5a0359331d3c6306273538275200edf53a3cd6e225fda92f31352d1b
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
