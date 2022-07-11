@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class ThroughBug : MonoBehaviour
 {
-    [SerializeField] private GameObject _playerR = null;
-    [SerializeField] private GameObject _playerL = null;
+    [SerializeField] private GameObject _playerR;
+    [SerializeField] private GameObject _playerL;
     
     [SerializeField] private float _bugTriggerTimeR = 0f;
     [SerializeField] private float _bugTriggerTimeL = 0f;
 
     [SerializeField] private bool _isTriggerOnR = false;//시간 초 흐르게 하는 변수
     [SerializeField] private bool _isTriggerOnL = false;//시간 초 흐르게 하는 변수
-    [SerializeField] private bool _isBugRunning = false;//버그 실행하게 하는 변수
 
     private void Awake()
     { 
@@ -28,11 +27,11 @@ public class ThroughBug : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject == _playerR)
+        if(collision.gameObject.CompareTag("PlayerR"))
         {
             _isTriggerOnR = true;
         }
-        if(collision.gameObject == _playerL)
+        if(collision.gameObject.CompareTag("PlayerL"))
         {
             _isTriggerOnL = true;
         }
@@ -62,7 +61,8 @@ public class ThroughBug : MonoBehaviour
     {
         if (_bugTriggerTimeR > 3f)
         {
-            _playerR.transform.position -= new Vector3(0, 5, 0);
+            Debug.Log("dddd");
+            _playerR.transform.position = new Vector3(transform.position.x, transform.position.y-10, 0);
         }
     }
 }
