@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 5
-  _jumpPower: 5
+  _jumpPower: 7
   _jumpCount: 0
   _jumpMaxCount: 1
 --- !u!95 &2298287990164290609
