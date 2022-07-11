@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class PlayerControllerL : PlayerController
 {
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         Move();
+        if(Input.GetKeyDown(KeyCode.W))
+            Jump();
+        IsGrounded();
+        Jumplimit();
     }
 
     void Move()
     {
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += new Vector3(-1, 0, 0) * speed * Time.deltaTime;
+            transform.position += new Vector3(-1, 0, 0) * _moveSpeed * Time.deltaTime;
         }
+    }
 
+    protected override void Jump()
+    {
+        base.Jump();
     }
 }
