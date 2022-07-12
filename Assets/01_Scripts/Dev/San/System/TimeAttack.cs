@@ -12,7 +12,7 @@ public class TimeAttack : MonoBehaviour
     #region Time Limit
     [Header("시간 제한")]
     [SerializeField]
-    private float time = 0;
+    private float limitTime = 0;
     private float crtTime = 0;
     #endregion
     #region 이동 거리
@@ -25,6 +25,12 @@ public class TimeAttack : MonoBehaviour
     private GameObject playerR;
     #endregion
 
+    private void Start()
+    {
+        playerL = GameObject.FindGameObjectWithTag("PlayerL");
+        playerR = GameObject.FindGameObjectWithTag("PlayerR");
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -33,12 +39,11 @@ public class TimeAttack : MonoBehaviour
     private void PlayTimeAttack()
     {
         crtTime += Time.deltaTime;
-        if(crtTime >= time)
+        if(crtTime >= limitTime)
         {
             crtTime = 0;
             playerL.transform.position = startPos + posX;
             playerR.transform.position = startPos - posX;
-
         }
     }
 }
