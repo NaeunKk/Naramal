@@ -41,6 +41,7 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !_optionCheck)
         {
+            Debug.Log("A");
             OptionOpen();
             _optionCheck = true;
         }
@@ -62,6 +63,10 @@ public class UIManager : MonoBehaviour
         _option.gameObject?.SetActive(false);
     }
 
+    public void GoToInGmae()
+    {
+        SceneManager.LoadScene("InGame");
+    }
 
     public void VolumeControll(float volume)
     {
