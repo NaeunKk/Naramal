@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class TimeAttack : MonoBehaviour
 {
-    [Header("시작 지점 좌표 & 제한 시간")]
+    #region Start Point
+    [Header("시작 지점")]
     [SerializeField]
     private Vector3 startPos = Vector3.zero;
-
+    #endregion
+    #region Time Limit
+    [Header("시간 제한")]
     [SerializeField]
     private float time = 0;
     private float crtTime = 0;
-
-    [Header("좌표에서 좌우로 이만큼 이동되어 플레이어가 스폰됨")]
+    #endregion
+    #region 이동 거리
+    [Header("이동 거리")]
 
     [SerializeField]
     private Vector3 posX;
 
     private GameObject playerL;
     private GameObject playerR;
+    #endregion
 
     // Update is called once per frame
     void Update()
