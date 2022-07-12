@@ -17,7 +17,7 @@ public class PlayerControllerR : PlayerController
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += new Vector3(-1, 0, 0) * _moveSpeed * Time.deltaTime;
+            transform.position += new Vector3(1, 0, 0) * _moveSpeed * Time.deltaTime;
             platformPos = platform.transform.position;
             distance = platformPos - transform.position;
         }
