@@ -27,10 +27,8 @@ public class IsPressed : MonoBehaviour
         Vector3 pressedPosition = _pressedPosition + transform.position; // 감지 위치
         RaycastHit2D raycastHit2D = Physics2D.Raycast(pressedPosition, Vector3.up, 1); //레이캐스트
         Debug.DrawRay(pressedPosition, Vector3.up);
-        Debug.Log("a");
         if (raycastHit2D.collider != null && raycastHit2D.transform.CompareTag(_tagName))
         {
-            Debug.Log("b");
             _pAnimator.SetBool("isPressed", true);
         }
         else

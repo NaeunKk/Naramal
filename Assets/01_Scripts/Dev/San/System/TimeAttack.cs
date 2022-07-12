@@ -9,7 +9,7 @@ public class TimeAttack : MonoBehaviour
     private Vector3 startPos = Vector3.zero;
 
     [SerializeField]
-    private float time = 0;
+    private float limitTime = 0;
     private float crtTime = 0;
 
     [Header("좌표에서 좌우로 이만큼 이동되어 플레이어가 스폰됨")]
@@ -20,6 +20,12 @@ public class TimeAttack : MonoBehaviour
     private GameObject playerL;
     private GameObject playerR;
 
+    private void Start()
+    {
+        playerL = GameObject.FindGameObjectWithTag("PlayerL");
+        playerR = GameObject.FindGameObjectWithTag("PlayerR");
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -28,12 +34,11 @@ public class TimeAttack : MonoBehaviour
     private void PlayTimeAttack()
     {
         crtTime += Time.deltaTime;
-        if(crtTime >= time)
+        if(crtTime >= limitTime)
         {
             crtTime = 0;
             playerL.transform.position = startPos + posX;
             playerR.transform.position = startPos - posX;
-
         }
     }
 }
