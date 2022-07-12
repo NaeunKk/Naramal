@@ -19,12 +19,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private AudioSource _bgm;
     #endregion
 
-    #region particle
-    [Header("È¿°ú")] 
-    [SerializeField] private float _deleteTime;
-    private float _crtTime = 0;
-    #endregion
-
     #region ÁøÇà·ü
     [Header("ÃÖÁ¾ ÁöÁ¡ YÁÂÇ¥")]
     [SerializeField] private float _endPosY; // ÃÖÁ¾ ÁöÁ¡ÀÇ YÁÂÇ¥
@@ -56,7 +50,6 @@ public class UIManager : MonoBehaviour
             _optionCheck = false;
         }
 
-        OnDelete();
         CurrentProgress();
     }
 
@@ -73,16 +66,6 @@ public class UIManager : MonoBehaviour
     public void VolumeControll(float volume)
     {
         _bgm.volume = volume;
-    }
-
-    private void OnDelete()
-    {
-        _crtTime += Time.deltaTime;
-        if (_crtTime > _deleteTime)
-        {
-            _crtTime = 0;
-            PoolingManager.Instance.Push(gameObject);
-        }
     }
 
     private void CurrentProgress()
