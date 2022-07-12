@@ -17,6 +17,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 _pressedPosition = new Vector3(0, 0.5f, 0); // 누르는 걸 감지하는 위치 ( + transporm.position ) 해야함
     [SerializeField] private string _tagName; // 플레이어 태그 이름  L이면 R태그 R이면 L태그 적어넣어두면 됨
     #endregion
+    #region Moving Platform
+    [Header("움직이는 발판")]
+    [SerializeField] protected bool isGround = false;
+    [SerializeField] protected GameObject platform;
+    [SerializeField] protected Vector3 distance;
+    [SerializeField] protected Vector3 platformPos;
+    #endregion
 
     protected virtual void Awake()
     {

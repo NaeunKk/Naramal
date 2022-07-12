@@ -4,22 +4,15 @@ using UnityEngine;
 
 public class PlayerControllerL : PlayerController
 {
-    [SerializeField] bool isGround = false;
-    [SerializeField] GameObject platform;
-    [SerializeField] Vector3 distance;
-    [SerializeField] Vector3 platfromPos;
-
     void Update()
     {
-        Move();
-        if(Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
             Jump();
+        Move();
         IsGrounded();
         Jumplimit();
 
-        if (platform != null)
-            if (isGround)
-                transform.position = platform.transform.position - distance;
+
     }
 
     void Move()
@@ -27,7 +20,16 @@ public class PlayerControllerL : PlayerController
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += new Vector3(-1, 0, 0) * _moveSpeed * Time.deltaTime;
+            platformPos = platform.transform.position;
+            distance = platformPos - transform.position;
         }
+        else if (platform != null && !(Input.GetKey(KeyCode.W)))
+        {
+            if (isGround)
+                transform.position = platform.transform.position - distance;
+        }
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,15 +38,17 @@ public class PlayerControllerL : PlayerController
         {
             isGround = true;
             platform = collision.gameObject;
-            platfromPos = platform.transform.position;
-            distance = platfromPos - transform.position;
+            platformPos = platform.transform.position;
+            distance = platformPos - transform.position;
+        }
+
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("MovingPlatform"))
+        {
+            isGround = false;
+            platform = null;
         }
     }
-
-    protected override void Jump()
-    {
-        base.Jump();
-    }
-
-    
 }

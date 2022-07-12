@@ -13,9 +13,10 @@ public class ChangeGround : MonoBehaviour
 
     [SerializeField] private BoxCollider2D _changeGroundBoxCollider;
 
-    [SerializeField] private float _changeDelay = 3f;
-
     [SerializeField] private bool _isGroundChange = false; //false == Error, true == Clear
+
+    [Header("밑의 시간 후 발판 변경")]
+    [SerializeField] private float _changeDelay = 3f;
 
     private void Awake()
     {

@@ -14,6 +14,10 @@ public class ThroughBug : MonoBehaviour
     [SerializeField] private bool _isTriggerOnR = false;//시간 초 흐르게 하는 변수
     [SerializeField] private bool _isTriggerOnL = false;//시간 초 흐르게 하는 변수
 
+    [Header("밑의 시간 후 땅을 뚫음")]
+    [SerializeField] private float ThroughStartDelayR = 3f;
+    [SerializeField] private float ThroughStartDelayL = 3f;
+
     private void Awake()
     { 
 
@@ -59,10 +63,15 @@ public class ThroughBug : MonoBehaviour
 
     private void ThroughBugRunning()
     {
-        if (_bugTriggerTimeR > 3f)
+        if (_bugTriggerTimeR > ThroughStartDelayR)
         {
-            Debug.Log("dddd");
+            Debug.Log("RRRRR");
             _playerR.transform.position = new Vector3(transform.position.x, transform.position.y-10, 0);
+        }
+        if (_bugTriggerTimeL > ThroughStartDelayL)
+        {
+            Debug.Log("LLLLL");
+            _playerL.transform.position = new Vector3(transform.position.x, transform.position.y-10, 0);
         }
     }
 }

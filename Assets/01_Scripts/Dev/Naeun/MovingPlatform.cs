@@ -30,10 +30,12 @@ public class MovingPlatform : MonoBehaviour
     }
     IEnumerator PlatformMove()
     {
-        if (_moveFlag == 1)
-            _moveFlag = 2;
-        else _moveFlag = 1;
-        yield return new WaitForSeconds(2f);
-        StartCoroutine(PlatformMove());
+        while (true)
+        {
+            if (_moveFlag == 1)
+                _moveFlag = 2;
+            else _moveFlag = 1;
+            yield return new WaitForSeconds(2f);
+        }
     }
 }

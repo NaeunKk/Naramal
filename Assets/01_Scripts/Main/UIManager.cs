@@ -13,15 +13,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image _option;
     [SerializeField] private bool _optionCheck = false;
     #endregion
+
     #region sound
     [Header("사운드")]
     [SerializeField] private AudioSource _bgm;
     #endregion
+
     #region particle
     [Header("효과")] 
     [SerializeField] private float _deleteTime;
     private float _crtTime = 0;
     #endregion
+
     #region 진행률
     [Header("최종 지점 Y좌표")]
     [SerializeField] private float _endPosY; // 최종 지점의 Y좌표
