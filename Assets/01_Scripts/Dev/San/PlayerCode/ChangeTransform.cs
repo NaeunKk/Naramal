@@ -14,6 +14,9 @@ public class ChangeTransform : MonoBehaviour
     private Vector3 _posL = Vector3.one; // L 위치값
     private Vector3 _posR = Vector3.one; // R 위치값
 
+    [SerializeField]
+    private GameObject _particleSystem;
+
 
 
     // Update is called once per frame
@@ -26,15 +29,24 @@ public class ChangeTransform : MonoBehaviour
     {
         if(Input.GetKeyDown(_keyL) && _isSkillOn || Input.GetKeyDown(_keyR) && _isSkillOn)
         {
-            // 위치 받아오기
-            _posL = _objL.transform.position;
-            _posR = _objR.transform.position;
-            // 위치 바꾸기
-            Vector3 posL = _posL;
-            _objL.transform.position = _posR;
-            _objR.transform.position = posL;
-            StartCoroutine("Delay");
+            TrmChangingLR();
         }
+    }
+    // 강제로 위치 바꾸는 메서드
+    public void TrmChangingLR()
+    {
+        // 위치 받아오기
+        _posL = _objL.transform.position;
+        _posR = _objR.transform.position;
+
+        _objL.transform.position = _posR;
+        _objR.transform.position = _posL;
+        // 파티클 효과
+        GameObject particleL = PoolingManager.Instance.Pop(_particleSystem);
+        particleL.transform.position = _posL;
+        GameObject particleR = PoolingManager.Instance.Pop(_particleSystem);
+        particleR.transform.position = _posR;
+        StartCoroutine("Delay");
     }
     IEnumerator Delay()
     {
