@@ -11,18 +11,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] protected float _jumpPower = 2;
     [SerializeField] protected int _jumpCount = 0;
     [SerializeField] protected int _jumpMaxCount = 0;
+    [SerializeField] private bool _isJumping = false;
     #endregion
     #region Animation
     private Animator _pAnimator; // 애니메이터
     private Vector3 _pressedPosition = new Vector3(0, 0.5f, 0); // 누르는 걸 감지하는 위치 ( + transporm.position ) 해야함
     [SerializeField] private string _tagName; // 플레이어 태그 이름  L이면 R태그 R이면 L태그 적어넣어두면 됨
-    #endregion
-    #region Moving Platform
-    [Header("움직이는 발판")]
-    [SerializeField] protected bool isGround = false;
-    [SerializeField] protected GameObject platform;
-    [SerializeField] protected Vector3 distance;
-    [SerializeField] protected Vector3 platformPos;
     #endregion
 
     protected virtual void Awake()
@@ -36,40 +30,39 @@ public class PlayerController : MonoBehaviour
         PressedOn();
     }
 
-    protected virtual void Jump()
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //점프 횟수
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            _jumpCount = 0;
+        }
+    }
+
+    protected virtual void Jump(KeyCode key)
+    {
+        if (Input.GetKeyDown(key) && _isJumping == true)
+        {
+            _rigidJump2D.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
+            _jumpCount++;
+            _isJumping = false;
+        }
+    }
+
+    protected void JumpLimit()
+    {
         if (_jumpCount < _jumpMaxCount)
         {
-            _jumpCount++;
-            _rigidJump2D.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
-        }
-
-        if (_rigidJump2D.velocity.y == 0)
-        {
-            _rigidJump2D.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
+            _isJumping = true;
         }
     }
-
-    protected void IsGrounded()
+    protected void Move(KeyCode key, float dir)
     {
-        if (_rigidJump2D.velocity.y < 0)
+        if (Input.GetKey(key))
         {
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, Vector3.down, 1, LayerMask.GetMask("Ground")); //레이캐스트 설정
-            if (raycastHit2D.collider != null)
-            {
-                _jumpCount = 0;
-            }
+            transform.position += new Vector3(dir, 0, 0) * _moveSpeed * Time.deltaTime;
         }
-    }
-
-    protected void Jumplimit()
-    {
-        if (_jumpCount < 0)
-        {
-            _jumpCount++;
-        }
-    }
+    }   
 
     protected void PressedOn()
     {
