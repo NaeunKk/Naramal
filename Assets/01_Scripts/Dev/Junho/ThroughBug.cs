@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ThroughBug : MonoBehaviour
 {
-    [SerializeField] private GameObject _playerR;
-    [SerializeField] private GameObject _playerL;
+    [SerializeField] private GameObject _playerR;//씬에서 추가하기
+    [SerializeField] private GameObject _playerL;//씬에서 추가하기
     
     [SerializeField] private float _bugTriggerTimeR = 0f;
     [SerializeField] private float _bugTriggerTimeL = 0f;
