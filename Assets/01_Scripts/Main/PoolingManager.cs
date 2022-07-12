@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolManager : MonoBehaviour
+public class PoolingManager : MonoBehaviour
 {
-    public static PoolManager Instance;
+    public static PoolingManager Instance;
     [SerializeField] private List<GameObject> poolList = new List<GameObject>();
     private Dictionary<string, Stack<GameObject>> pools = new Dictionary<string, Stack<GameObject>>();
     private void Awake()
