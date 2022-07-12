@@ -1,6 +1,9 @@
 fileFormatVersion: 2
 guid: 5a499e4809836274eb38cd99b370a2c1
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> main
 labels:
 - Tween
 - Tweening
@@ -17,14 +20,19 @@ labels:
 - 2DToolkit
 - TextMeshPro
 - Text
+<<<<<<< HEAD
 folderAsset: yes
 DefaultImporter:
   userData: 
 =======
+=======
+>>>>>>> main
 folderAsset: yes
 DefaultImporter:
-  externalObjects: {}
   userData: 
+<<<<<<< HEAD
   assetBundleName: 
   assetBundleVariant: 
+>>>>>>> main
+=======
 >>>>>>> main
