@@ -16,9 +16,10 @@ public class RigCamera : MonoBehaviour
 
     private CinemachineVirtualCamera _rigCam;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        _objL = GameObject.Find("L");
+        _objR = GameObject.Find("R");
         _transform = GetComponent<Transform>();
         _rigCam = GetComponent<CinemachineVirtualCamera>();
     }

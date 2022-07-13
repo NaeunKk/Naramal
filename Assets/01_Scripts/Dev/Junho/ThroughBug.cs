@@ -18,9 +18,13 @@ public class ThroughBug : MonoBehaviour
     [SerializeField] private float ThroughStartDelayR = 3f;
     [SerializeField] private float ThroughStartDelayL = 3f;
 
+    [Header("¹ØÀÇ ¼öÄ¡ ¸¸Å­ ¶³¾îÁü")]
+    [SerializeField] private float FallingValue = 10f;
+
     private void Awake()
     { 
-
+        _playerL = GameObject.Find("L").GetComponent<GameObject>();
+        _playerR = GameObject.Find("R").GetComponent<GameObject>();
     }
 
     private void Update()
@@ -66,12 +70,12 @@ public class ThroughBug : MonoBehaviour
         if (_bugTriggerTimeR > ThroughStartDelayR)
         {
             Debug.Log("RRRRR");
-            _playerR.transform.position = new Vector3(transform.position.x, transform.position.y-10, 0);
+            _playerR.transform.position = new Vector3(transform.position.x, transform.position.y-FallingValue, 0);
         }
         if (_bugTriggerTimeL > ThroughStartDelayL)
         {
             Debug.Log("LLLLL");
-            _playerL.transform.position = new Vector3(transform.position.x, transform.position.y-10, 0);
+            _playerL.transform.position = new Vector3(transform.position.x, transform.position.y-FallingValue, 0);
         }
     }
 }

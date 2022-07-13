@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    [SerializeField] int _moveFlag = 1;
-    [SerializeField] float _moveSpeed = 7;
-    [SerializeField] float _movePower = 0.12f;
+    [SerializeField] float _moveFlag = 1;
+    [SerializeField] float _moveSpeed = 20;
+    float _movePower = 0.12f;
 
-    private void Start()
+    void Start()
     {
-        StartCoroutine(PlatformMove());
+        StartCoroutine(BlockMove());
     }
 
-    private void LateUpdate()
+    void LateUpdate()
     {
         Move();
     }
@@ -28,13 +28,15 @@ public class MovingPlatform : MonoBehaviour
 
         transform.position += moveVelocity * _moveSpeed * Time.deltaTime;
     }
-    IEnumerator PlatformMove()
+
+    IEnumerator BlockMove()
     {
         while (true)
         {
             if (_moveFlag == 1)
                 _moveFlag = 2;
             else _moveFlag = 1;
+
             yield return new WaitForSeconds(2f);
         }
     }

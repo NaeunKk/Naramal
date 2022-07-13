@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.Audio;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,13 +17,7 @@ public class UIManager : MonoBehaviour
 
     #region sound
     [Header("사운드")]
-    [SerializeField] private AudioSource _bgm;
-    #endregion
-
-    #region particle
-    [Header("효과")] 
-    [SerializeField] private float _deleteTime;
-    private float _crtTime = 0;
+    [SerializeField] AudioSource _audioSource;
     #endregion
 
     #region 진행률
@@ -47,6 +42,7 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !_optionCheck)
         {
+            Debug.Log("A");
             OptionOpen();
             _optionCheck = true;
         }
@@ -56,7 +52,6 @@ public class UIManager : MonoBehaviour
             _optionCheck = false;
         }
 
-        OnDelete();
         CurrentProgress();
     }
 
@@ -69,20 +64,14 @@ public class UIManager : MonoBehaviour
         _option.gameObject?.SetActive(false);
     }
 
-
-    public void VolumeControll(float volume)
+    public void GoToInGmae()
     {
-        _bgm.volume = volume;
+        SceneManager.LoadScene("InGame");
     }
 
-    private void OnDelete()
+    public void SetMuisc(float volume)
     {
-        _crtTime += Time.deltaTime;
-        if (_crtTime > _deleteTime)
-        {
-            _crtTime = 0;
-            PoolingManager.Instance.Push(gameObject);
-        }
+        _audioSource.volume = volume;
     }
 
     private void CurrentProgress()
