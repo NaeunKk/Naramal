@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (raycastHit2D.collider == null)
         {
-            Debug.Log("a");
+            //Debug.Log("a");
             _isJumping = false;
         }
     }

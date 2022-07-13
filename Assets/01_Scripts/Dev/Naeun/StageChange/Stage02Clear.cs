@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Stage01Clear : MonoBehaviour
+public class Stage02Clear : MonoBehaviour
 {
     private bool _playerR = false;
     private bool _playerL = false;
@@ -16,7 +16,7 @@ public class Stage01Clear : MonoBehaviour
         _R = GameObject.Find("R");
     }
 
-    
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("PlayerR"))
@@ -29,12 +29,12 @@ public class Stage01Clear : MonoBehaviour
     {
         if (_playerL == true && _playerR == true)
         {
-            
-            _L.transform.position = new Vector3(-8, 37, 0);
-            _R.transform.position = new Vector3(5, 37, 0);
+
+            _L.transform.position = new Vector3(6, 98, 0);
+            _R.transform.position = new Vector3(8, 98, 0);
             SceneManager.LoadScene("P");
         }
     }
 
-    
+
 }

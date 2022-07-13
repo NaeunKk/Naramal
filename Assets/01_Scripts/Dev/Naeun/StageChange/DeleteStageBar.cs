@@ -5,24 +5,40 @@ using UnityEngine;
 public class DeleteStageBar : MonoBehaviour
 {
     public static DeleteStageBar Instance;
-    public bool _isStage1Bar = false;
-    public bool _isStage2Bar = false;
-    public bool _isStage3Bar = false;
+    public static bool _isStage1Bar = false;
+    public static bool _isStage2Bar = false;
+    public static bool _isStage3Bar = false;
 
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
             Instance = this;
+
+        Debug.Log("dd");
+
     }
 
     private void Update()
     {
-        Stage1();
+
     }
 
-    private void Stage1()
+    private void Reset()
     {
-        //스테이지 1에서 포탈을 타면 _isStage1Bar를 true로 바꾸게 하기
+        //Do Not
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Clear"))
+        {
+            _isStage1Bar = true;
+        }
+        if (collision.gameObject.CompareTag("Clear2"))
+        {
+            Debug.Log(gameObject.name);
+            _isStage2Bar = true;
+        }
     }
 }
