@@ -9,6 +9,8 @@ TagManager:
   - PlayerL
   - Ground
   - MovingPlatform
+  - Clear
+  - Clear2
   layers:
   - Default
   - TransparentFX

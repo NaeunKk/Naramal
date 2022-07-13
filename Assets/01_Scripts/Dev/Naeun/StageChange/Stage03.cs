@@ -39,7 +39,7 @@ public class Stage03 : MonoBehaviour
 
     private void deleteBar()
     {
-        if (DeleteStageBar.Instance._isStage3Bar == true)
+        if (DeleteStageBar._isStage3Bar == true)
         {
             _stage3BoxCollider.enabled = false;
         }
