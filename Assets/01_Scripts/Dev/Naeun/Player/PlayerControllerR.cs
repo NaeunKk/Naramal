@@ -6,7 +6,7 @@ public class PlayerControllerR : PlayerController
 {
     float dir = 1;
 
-    protected override void Update()
+    protected void Update()
     {
         base.Update();
         if (Input.GetKeyDown(KeyCode.UpArrow))
