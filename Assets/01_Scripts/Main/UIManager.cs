@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     #region sound
     [Header("사운드")]
     [SerializeField] AudioSource _audioSource;
+    [SerializeField] Slider _sound;
     #endregion
 
     #region 진행률
@@ -42,7 +43,7 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !_optionCheck)
         {
-            Debug.Log("A");
+            Debug.Log("a");
             OptionOpen();
             _optionCheck = true;
         }
@@ -64,15 +65,26 @@ public class UIManager : MonoBehaviour
         _option.gameObject?.SetActive(false);
     }
 
+    public void GoToIntro()
+    {
+        SceneManager.LoadScene("Intro");
+    }
+
     public void GoToInGmae()
     {
         SceneManager.LoadScene("InGame");
     }
 
-    public void SetMuisc(float volume)
+    private void SetMuisc(float volume)
     {
+        _sound.value = volume;
         _audioSource.volume = volume;
     }
+    public void MusicSetting()
+    {
+        SetMuisc(_sound.value);
+    }
+
 
     private void CurrentProgress()
     {

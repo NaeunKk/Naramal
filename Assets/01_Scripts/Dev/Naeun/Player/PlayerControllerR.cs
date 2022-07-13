@@ -6,8 +6,9 @@ public class PlayerControllerR : PlayerController
 {
     float dir = 1;
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         if (Input.GetKeyDown(KeyCode.UpArrow))
             Jump(KeyCode.UpArrow);
         JumpLimit();

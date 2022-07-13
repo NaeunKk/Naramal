@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerControllerL : PlayerController
 {
     float dir = -1;
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         if (Input.GetKeyDown(KeyCode.W))
             Jump(KeyCode.W);
         JumpLimit();
