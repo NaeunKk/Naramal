@@ -245,6 +245,7 @@ MonoBehaviour:
   _isJumping: 0
   _ray: 0.6
   _tagName: PlayerL
+  _jumpSound: {fileID: 0}
 --- !u!114 &1784893151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,3 +284,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isStage1Bar: 0
+  _isStage2Bar: 0
+  _isStage3Bar: 0

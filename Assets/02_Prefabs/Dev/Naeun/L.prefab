@@ -256,7 +256,7 @@ MonoBehaviour:
   _keyL: 100
   _keyR: 276
   _objL: {fileID: 8550535456506275526}
-  _objR: {fileID: 2298287990164290571, guid: 7c0f5d4ffa06ff94c97a1d836a11d055, type: 3}
+  _objR: {fileID: 0}
   _skillCoolTime: 0.3
   _particleSystem: {fileID: 3289368542737895258, guid: 189b66c053149e54494fcc585f503693, type: 3}
 --- !u!114 &-5928951916910652877
@@ -276,6 +276,7 @@ MonoBehaviour:
   _isJumping: 0
   _ray: 0.6
   _tagName: PlayerR
+  _jumpSound: {fileID: 0}
 --- !u!114 &416427063948500652
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 _pressedPosition = new Vector3(0, 0.5f, 0); // 누르는 걸 감지하는 위치 ( + transporm.position ) 해야함
     [SerializeField] private string _tagName; // 플레이어 태그 이름  L이면 R태그 R이면 L태그 적어넣어두면 됨
     #endregion
+    [SerializeField] AudioSource _jumpSound;
+    [SerializeField] AudioSource _pressedSound;
 
 
     protected virtual void Awake()
@@ -29,7 +31,6 @@ public class PlayerController : MonoBehaviour
     {
         Debug.DrawRay(transform.position, Vector2.down * _ray, Color.red);
         PressedOn();
-        Debug.DrawRay(transform.position, Vector2.down * _ray, Color.red);
     }
 
     protected void Jump(KeyCode key)
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
         {
             _rigidJump2D.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
             _isJumping = false;
+            _jumpSound.Play();
         }
     }
 
@@ -70,7 +72,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("a");
         if (raycastHit2D.collider != null && raycastHit2D.transform.CompareTag(_tagName))
         {
-            Debug.Log("b");
+            _pressedSound.Play();
             _pAnimator.SetBool("isPressed", true);
         }
         else
