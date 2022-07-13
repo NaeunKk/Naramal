@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4253642329580954619}
   - component: {fileID: 8613962341122599272}
   - component: {fileID: 5764079305680359081}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RotationBox
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
