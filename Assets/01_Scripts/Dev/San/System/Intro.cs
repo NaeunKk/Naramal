@@ -4,17 +4,18 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _panel; // 이 모든 것들이 있을 패널
+    private GameObject _txtPanel; // 텍스트들이 있을 패널
     [SerializeField]
     private List<float> _doTxtSecs = new List<float>(); // 텍스트별 doText 시간
     [SerializeField]
     private List<string> _txts = new List<string>(); // 나오는 텍스트
     [SerializeField]
-    private List<Sprite> _sprites = new List<Sprite>(); // 뒤쪽 스프라이트
+    private List<Sprite> _sprites = new List<Sprite>(); // 뒤쪽 스프라이트 16:9비율로 넣어줘용
 
     [SerializeField]
     private TextMeshProUGUI _mainTxt; // 텍스트를 송출할 텍스트
@@ -24,7 +25,7 @@ public class Intro : MonoBehaviour
     int num = 0;
     private void Start()
     {
-        _panel.SetActive(true);
+        _txtPanel.SetActive(true);
     }
     private void Update()
     {
@@ -35,7 +36,9 @@ public class Intro : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (num >= _txts.Count)
-                _panel.SetActive(false);
+            {
+                SceneManager.LoadScene("Main");
+            }
             else
             {
                 DoText(_mainTxt, _txts[num], _doTxtSecs[num]);
