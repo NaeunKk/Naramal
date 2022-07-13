@@ -29,17 +29,17 @@ public class Stage01 : MonoBehaviour
     {
         if(_playerL == true && _playerR == true)
         {
+
             SceneManager.LoadScene("Stage01");
             L.transform.position = new Vector3(203, 20, 0);
             R.transform.position = new Vector3(204, 20, 0);
         }
-        deleteBar();
+        DeleteBar();
 
     }
-
-    private void deleteBar()
+    private void DeleteBar()
     {
-        if (DeleteStageBar.Instance._isStage1Bar == true)
+        if (DeleteStageBar._isStage1Bar == true)
         {
             _stage1BoxCollider.enabled = false;
         }
