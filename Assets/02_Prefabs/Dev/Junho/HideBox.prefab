@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2738893580720306776}
   - component: {fileID: 2738893580720306777}
   - component: {fileID: 2738893580720306774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HideBox
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 339381560699383762, guid: 737e43a8c044f434c8e5c735c43a79a2, type: 3}
+  m_Sprite: {fileID: 3691755172320232930, guid: 5140c47899343b244b36e383ac32b907, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,9 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c81c35814f0849449adec806b1c0714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isHideTrigger: 0
-  _hideTime: 0
-  _hideBoxSprite: {fileID: 0}
+  HideStartDelay: 3
 --- !u!61 &2738893580720306774
 BoxCollider2D:
   m_ObjectHideFlags: 0

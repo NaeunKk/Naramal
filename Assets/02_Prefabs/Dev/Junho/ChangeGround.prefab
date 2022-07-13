@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 344554801868833804}
   - component: {fileID: 344554801868833806}
   - component: {fileID: 344554801868833807}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChangeGround
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,5 +126,6 @@ MonoBehaviour:
   _clearGroundImage: {fileID: 0}
   _changeGroundImage: {fileID: 0}
   _changeGround: {fileID: 344554801868833803}
-  _changeDelay: 3
+  _changeGroundBoxCollider: {fileID: 0}
   _isGroundChange: 0
+  _changeDelay: 2

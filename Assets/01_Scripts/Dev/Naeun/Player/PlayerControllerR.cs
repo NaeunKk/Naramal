@@ -12,5 +12,6 @@ public class PlayerControllerR : PlayerController
             Jump(KeyCode.UpArrow);
         JumpLimit();
         Move(KeyCode.RightArrow, dir);
+
     }
 }

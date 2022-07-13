@@ -23,7 +23,8 @@ public class ThroughBug : MonoBehaviour
 
     private void Awake()
     { 
-
+        _playerL = GameObject.Find("L").GetComponent<GameObject>();
+        _playerR = GameObject.Find("R").GetComponent<GameObject>();
     }
 
     private void Update()
