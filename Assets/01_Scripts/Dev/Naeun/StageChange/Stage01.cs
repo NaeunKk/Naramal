@@ -29,6 +29,7 @@ public class Stage01 : MonoBehaviour
     {
         if(_playerL == true && _playerR == true)
         {
+            Debug.Log("A");
             SceneManager.LoadScene("Stage01");
             L.transform.position = new Vector3(203, 20, 0);
             R.transform.position = new Vector3(204, 20, 0);
