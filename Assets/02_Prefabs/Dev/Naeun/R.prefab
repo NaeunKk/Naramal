@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 4232909450122475662}
   - component: {fileID: 4232909450122475663}
   - component: {fileID: 4232909450122475656}
+  - component: {fileID: 1001073027}
   m_Layer: 8
   m_Name: R
   m_TagString: PlayerR
@@ -224,7 +225,7 @@ MonoBehaviour:
   _jumpPower: 10
   _isJumping: 0
   _ray: 0.6
-  _tagName: 
+  _tagName: PlayerL
   _jumpSound: {fileID: 0}
   _pressedSound: {fileID: 0}
 --- !u!114 &4232909450122475662
@@ -267,3 +268,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tagName: PlayerL
+--- !u!95 &1001073027
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4232909450122475657}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f4e89e39d632174ab2a2d22f81d240d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
