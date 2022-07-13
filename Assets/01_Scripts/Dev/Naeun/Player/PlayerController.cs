@@ -18,13 +18,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private string _tagName; // 플레이어 태그 이름  L이면 R태그 R이면 L태그 적어넣어두면 됨
     #endregion
 
+
     protected virtual void Awake()
     {
         _rigidJump2D = GetComponent<Rigidbody2D>();
         _pAnimator = GetComponent<Animator>();
     }
 
-    protected void Update()
+    protected virtual void Update()
     {
         Debug.DrawRay(transform.position, Vector2.down * _ray, Color.red);
         PressedOn();
@@ -76,5 +77,16 @@ public class PlayerController : MonoBehaviour
         {
             _pAnimator.SetBool("isPressed", false);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("MovingPlatform"))
+            gameObject.transform.SetParent(collision.gameObject.transform);
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.collider.CompareTag("MovingPlatform"))
+            gameObject.transform.SetParent(null);
     }
 }
