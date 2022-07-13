@@ -3432,7 +3432,7 @@ PrefabInstance:
     - target: {fileID: 1949322493, guid: 3f79c0077cf17284c91a1e274911b370, type: 3}
       propertyPath: _objR
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1001073018}
     - target: {fileID: 6789922078011392987, guid: 3f79c0077cf17284c91a1e274911b370, type: 3}
       propertyPath: _jumpSound
       value: 
