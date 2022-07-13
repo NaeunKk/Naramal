@@ -9,6 +9,9 @@ using UnityEngine.SceneManagement;
 public class Intro : MonoBehaviour
 {
     [SerializeField]
+    private string _mainPlaySceneName; // 다 진행되고 나올 메인 플레이 씬 이름
+
+    [SerializeField]
     private GameObject _txtPanel; // 텍스트들이 있을 패널
     [SerializeField]
     private List<float> _doTxtSecs = new List<float>(); // 텍스트별 doText 시간
@@ -37,7 +40,7 @@ public class Intro : MonoBehaviour
         {
             if (num >= _txts.Count)
             {
-                SceneManager.LoadScene("Main");
+                SceneManager.LoadScene(_mainPlaySceneName);
             }
             else
             {
