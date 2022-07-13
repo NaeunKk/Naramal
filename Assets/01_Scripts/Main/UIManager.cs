@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.Audio;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class UIManager : MonoBehaviour
 
     #region sound
     [Header("사운드")]
-    [SerializeField] private AudioSource _bgm;
+    [SerializeField] AudioSource _audioSource;
     #endregion
 
     #region 진행률
@@ -68,9 +69,9 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("InGame");
     }
 
-    public void VolumeControll(float volume)
+    public void SetMuisc(float volume)
     {
-        _bgm.volume = volume;
+        _audioSource.volume = volume;
     }
 
     private void CurrentProgress()

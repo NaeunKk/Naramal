@@ -9,9 +9,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidJump2D;
     [SerializeField] protected float _moveSpeed = 5;
     [SerializeField] protected float _jumpPower = 2;
-    [SerializeField] protected int _jumpCount = 0;
-    [SerializeField] protected int _jumpMaxCount = 0;
     [SerializeField] private bool _isJumping = false;
+    [SerializeField] private float _ray = 0.6f;
     #endregion
     #region Animation
     private Animator _pAnimator; // 애니메이터
@@ -27,33 +26,31 @@ public class PlayerController : MonoBehaviour
 
     protected void Update()
     {
+        Debug.DrawRay(transform.position, Vector2.down * _ray, Color.red);
         PressedOn();
+        Debug.DrawRay(transform.position, Vector2.down * _ray, Color.red);
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            _jumpCount = 0;
-        }
-    }
-
-    protected virtual void Jump(KeyCode key)
+    protected void Jump(KeyCode key)
     {
         if (Input.GetKeyDown(key) && _isJumping == true)
         {
             _rigidJump2D.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
-            _jumpCount++;
             _isJumping = false;
         }
     }
 
     protected void JumpLimit()
     {
-        if (_jumpCount < _jumpMaxCount)
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, Vector3.down, _ray, LayerMask.GetMask("Ground"));
+        if (raycastHit2D.collider != null)
         {
             _isJumping = true;
+        }
+        else if (raycastHit2D.collider == null)
+        {
+            Debug.Log("a");
+            _isJumping = false;
         }
     }
     protected void Move(KeyCode key, float dir)
