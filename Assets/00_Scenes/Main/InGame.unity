@@ -3047,6 +3047,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2738893580720306776, guid: afe3126628a135a4793081c5c25a3f71, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3691755172320232930, guid: 5140c47899343b244b36e383ac32b907, type: 3}
+    - target: {fileID: 2738893580720306776, guid: afe3126628a135a4793081c5c25a3f71, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738893580720306776, guid: afe3126628a135a4793081c5c25a3f71, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738893580720306776, guid: afe3126628a135a4793081c5c25a3f71, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2738893580720306779, guid: afe3126628a135a4793081c5c25a3f71, type: 3}
       propertyPath: m_RootOrder
       value: 0
