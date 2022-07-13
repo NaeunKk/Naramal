@@ -6,6 +6,9 @@ public class DeleteStageBar : MonoBehaviour
 {
     public static DeleteStageBar Instance;
     public bool _isStage1Bar = false;
+    public bool _isStage2Bar = false;
+    public bool _isStage3Bar = false;
+
 
     private void Awake()
     {

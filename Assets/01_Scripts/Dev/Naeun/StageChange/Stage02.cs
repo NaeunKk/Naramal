@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Stage01 : MonoBehaviour
+public class Stage02 : MonoBehaviour
 {
     private bool _playerR = false;
     private bool _playerL = false;
     [SerializeField] GameObject L;
     [SerializeField] GameObject R;
 
-    BoxCollider2D _stage1BoxCollider;
+    BoxCollider2D _stage2BoxCollider;
 
     private void Awake()
     {
-        _stage1BoxCollider = GetComponent<BoxCollider2D>();
+        _stage2BoxCollider = GetComponent<BoxCollider2D>();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -27,9 +27,9 @@ public class Stage01 : MonoBehaviour
 
     private void Update()
     {
-        if(_playerL == true && _playerR == true)
+        if (_playerL == true && _playerR == true)
         {
-            SceneManager.LoadScene("Stage01");
+            SceneManager.LoadScene("Stage02");
             L.transform.position = new Vector3(203, 20, 0);
             R.transform.position = new Vector3(204, 20, 0);
         }
@@ -39,10 +39,9 @@ public class Stage01 : MonoBehaviour
 
     private void deleteBar()
     {
-        if (DeleteStageBar.Instance._isStage1Bar == true)
+        if (DeleteStageBar.Instance._isStage2Bar == true)
         {
-            Debug.Log("dd");
-            _stage1BoxCollider.enabled = false;
+            _stage2BoxCollider.enabled = false;
         }
     }
 }

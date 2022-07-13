@@ -200,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7261141299199134188}
-  - component: {fileID: 7261141299199134189}
+  - component: {fileID: 4701811389339223985}
   m_Layer: 6
   m_Name: MovingPlatform
   m_TagString: MovingPlatform
@@ -225,7 +225,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7261141299199134189
+--- !u!114 &4701811389339223985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,12 +234,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7261141299199134190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e30d062c4618b0d4b9dcf41bfc4a6cea, type: 3}
+  m_Script: {fileID: 11500000, guid: ab9f7de807a11af4e9496597b6138ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _moveFlag: 1
-  _moveSpeed: 7
-  _movePower: 0.5
+  _moveSpeed: 20
 --- !u!1 &7261141299494082288
 GameObject:
   m_ObjectHideFlags: 0

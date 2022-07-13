@@ -77,4 +77,15 @@ public class PlayerController : MonoBehaviour
             _pAnimator.SetBool("isPressed", false);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("MovingPlatform"))
+            gameObject.transform.SetParent(collision.gameObject.transform);
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("MovingPlatform"))
+            gameObject.transform.SetParent(null);
+    }
 }
