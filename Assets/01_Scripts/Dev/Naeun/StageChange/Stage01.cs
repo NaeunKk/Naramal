@@ -41,7 +41,6 @@ public class Stage01 : MonoBehaviour
     {
         if (DeleteStageBar.Instance._isStage1Bar == true)
         {
-            Debug.Log("dd");
             _stage1BoxCollider.enabled = false;
         }
     }
