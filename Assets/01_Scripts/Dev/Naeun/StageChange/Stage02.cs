@@ -11,17 +11,20 @@ public class Stage02 : MonoBehaviour
     [SerializeField] GameObject R;
 
     BoxCollider2D _stage2BoxCollider;
+    UIManager _ui;
+
 
     private void Awake()
     {
+        _ui = GameObject.Find("Manager/UIManager").GetComponent<UIManager>();
         _stage2BoxCollider = GetComponent<BoxCollider2D>();
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("PlayerR"))
+        if (collision.gameObject.CompareTag("PlayerR"))
             _playerR = true;
-        if (collision.collider.CompareTag("PlayerL"))
+        if (collision.gameObject.CompareTag("PlayerL"))
             _playerL = true;
     }
 
@@ -29,7 +32,7 @@ public class Stage02 : MonoBehaviour
     {
         if (_playerL == true && _playerR == true)
         {
-
+            _ui.gameObject.SetActive(false);
             SceneManager.LoadScene("Stage02");
             L.transform.position = new Vector3(-8, -1, 0);
             R.transform.position = new Vector3(-6, -1, 0);
@@ -40,7 +43,7 @@ public class Stage02 : MonoBehaviour
     {
         if (DeleteStageBar._isStage2Bar == true)
         {
-            _stage2BoxCollider.enabled = false;
+            _stage2BoxCollider.gameObject.SetActive(false);
         }
     }
 }
