@@ -37,7 +37,6 @@ public class DeleteStageBar : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Clear2"))
         {
-            Debug.Log(gameObject.name);
             _isStage2Bar = true;
         }
     }

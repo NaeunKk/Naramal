@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     protected void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Delete))
+            SceneManager.LoadScene("Stage02");
         Debug.DrawRay(transform.position, Vector2.down * _ray, Color.red);
         PressedOn();
         Debug.DrawRay(transform.position, Vector2.down * _ray, Color.red);

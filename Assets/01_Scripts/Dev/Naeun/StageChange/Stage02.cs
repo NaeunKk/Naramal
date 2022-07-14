@@ -7,17 +7,17 @@ public class Stage02 : MonoBehaviour
 {
     private bool _playerR = false;
     private bool _playerL = false;
-    GameObject L;
-    GameObject R;
+    [SerializeField] GameObject L;
+    [SerializeField] GameObject R;
+
+    public UIManager _ui;
 
     BoxCollider2D _stage2BoxCollider;
-    UIManager _ui;
 
-
-    private void Start()
+    private void Awake()
     {
-        _ui = GameObject.Find("Manager/UIManager").GetComponent<UIManager>();
         _stage2BoxCollider = GetComponent<BoxCollider2D>();
+        _ui = GameObject.Find("Manager/UIManager").GetComponent<UIManager>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -33,11 +33,14 @@ public class Stage02 : MonoBehaviour
         if (_playerL == true && _playerR == true)
         {
             _ui.crtProgressTxt.gameObject.SetActive(false);
+            L.transform.position = new Vector3(203, 20, 0);
+            R.transform.position = new Vector3(206, 20, 0);
             SceneManager.LoadScene("Stage02");
-            L.transform.position = new Vector3(-8, -1, 0);
-            R.transform.position = new Vector3(-6, -1, 0);
+            L.transform.position = new Vector3(203, 20, 0);
+            R.transform.position = new Vector3(206, 20, 0);
         }
         DeleteBar();
+
     }
     private void DeleteBar()
     {
