@@ -378,7 +378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &132394069
 Transform:
   m_ObjectHideFlags: 0
@@ -405,6 +405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9240ef86b4381484eb268aeeb30ea3a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  L: {fileID: 1967493730}
+  R: {fileID: 74248801}
 --- !u!61 &132394071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -961,17 +963,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: R
       objectReference: {fileID: 0}
+    - target: {fileID: 2298287990164290573, guid: 7c0f5d4ffa06ff94c97a1d836a11d055, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d86e4a14015c34046ab6c9757fb4ede8, type: 2}
     - target: {fileID: 2298287990164290575, guid: 7c0f5d4ffa06ff94c97a1d836a11d055, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2298287990164290575, guid: 7c0f5d4ffa06ff94c97a1d836a11d055, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.3
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2298287990164290575, guid: 7c0f5d4ffa06ff94c97a1d836a11d055, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 97.6
+      value: 173.8
       objectReference: {fileID: 0}
     - target: {fileID: 2298287990164290575, guid: 7c0f5d4ffa06ff94c97a1d836a11d055, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1029,11 +1035,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8550535456506275524, guid: 3f79c0077cf17284c91a1e274911b370, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.31
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 8550535456506275524, guid: 3f79c0077cf17284c91a1e274911b370, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 97.6
+      value: 173.8
       objectReference: {fileID: 0}
     - target: {fileID: 8550535456506275524, guid: 3f79c0077cf17284c91a1e274911b370, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1071,6 +1077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: L
       objectReference: {fileID: 0}
+    - target: {fileID: 8550535456506275579, guid: 3f79c0077cf17284c91a1e274911b370, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d86e4a14015c34046ab6c9757fb4ede8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f79c0077cf17284c91a1e274911b370, type: 3}
 --- !u!1001 &470980784

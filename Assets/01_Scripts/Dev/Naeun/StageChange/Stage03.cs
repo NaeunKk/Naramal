@@ -7,8 +7,8 @@ public class Stage03 : MonoBehaviour
 {
     private bool _playerR = false;
     private bool _playerL = false;
-    GameObject L;
-    GameObject R;
+    [SerializeField] GameObject L;
+    [SerializeField] GameObject R;
 
     UIManager _ui;
 

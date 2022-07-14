@@ -60,9 +60,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(key))
         {
-            transform.position += new Vector3(dir, 0, 0) * _moveSpeed * Time.deltaTime;
+            _rigidJump2D.velocity = new Vector2(dir * _moveSpeed, _rigidJump2D.velocity.y);
         }
-    }   
+        else
+            _rigidJump2D.velocity = new Vector2(0, _rigidJump2D.velocity.y);
+    }
 
     protected void PressedOn()
     {
