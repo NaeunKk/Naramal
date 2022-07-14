@@ -10,8 +10,11 @@ public class Stage01Clear : MonoBehaviour
     GameObject _L;
     GameObject _R;
 
+    UIManager _ui;
+
     private void Awake()
     {
+        _ui = GameObject.Find("Manager/UIManager").GetComponent<UIManager>();
         _L = GameObject.Find("L");
         _R = GameObject.Find("R");
     }
@@ -29,10 +32,13 @@ public class Stage01Clear : MonoBehaviour
     {
         if (_playerL == true && _playerR == true)
         {
-            DeleteStageBar.Instance._isStage1Bar = true;
+            GameManager.Instance._stage += 1;
+            _ui.crtProgressTxt.gameObject.SetActive(true);
             _L.transform.position = new Vector3(-8, 37, 0);
             _R.transform.position = new Vector3(5, 37, 0);
-            SceneManager.LoadScene("InGame");
+            SceneManager.LoadScene("P");
         }
     }
+
+    
 }

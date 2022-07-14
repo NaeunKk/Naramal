@@ -10,18 +10,21 @@ public class Stage02 : MonoBehaviour
     [SerializeField] GameObject L;
     [SerializeField] GameObject R;
 
+    public UIManager _ui;
+
     BoxCollider2D _stage2BoxCollider;
 
     private void Awake()
     {
         _stage2BoxCollider = GetComponent<BoxCollider2D>();
+        _ui = GameObject.Find("Manager/UIManager").GetComponent<UIManager>();
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("PlayerR"))
+        if (collision.gameObject.CompareTag("PlayerR"))
             _playerR = true;
-        if (collision.collider.CompareTag("PlayerL"))
+        if (collision.gameObject.CompareTag("PlayerL"))
             _playerL = true;
     }
 
@@ -29,19 +32,21 @@ public class Stage02 : MonoBehaviour
     {
         if (_playerL == true && _playerR == true)
         {
+            _ui.crtProgressTxt.gameObject.SetActive(false);
+            L.transform.position = new Vector3(203, 20, 0);
+            R.transform.position = new Vector3(206, 20, 0);
             SceneManager.LoadScene("Stage02");
             L.transform.position = new Vector3(203, 20, 0);
-            R.transform.position = new Vector3(204, 20, 0);
+            R.transform.position = new Vector3(206, 20, 0);
         }
-        deleteBar();
+        DeleteBar();
 
     }
-
-    private void deleteBar()
+    private void DeleteBar()
     {
-        if (DeleteStageBar.Instance._isStage2Bar == true)
+        if (DeleteStageBar._isStage2Bar == true)
         {
-            _stage2BoxCollider.enabled = false;
+            _stage2BoxCollider.gameObject.SetActive(false);
         }
     }
 }

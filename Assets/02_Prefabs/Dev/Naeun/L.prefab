@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 1949322492}
   - component: {fileID: 1949322493}
   - component: {fileID: -5928951916910652877}
-  - component: {fileID: 416427063948500652}
   m_Layer: 8
   m_Name: L
   m_TagString: PlayerL
@@ -150,7 +149,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7799628609986024626, guid: 31631164e9d920542a96e71165e4baf9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -256,7 +255,7 @@ MonoBehaviour:
   _keyL: 100
   _keyR: 276
   _objL: {fileID: 8550535456506275526}
-  _objR: {fileID: 2298287990164290571, guid: 7c0f5d4ffa06ff94c97a1d836a11d055, type: 3}
+  _objR: {fileID: 0}
   _skillCoolTime: 0.3
   _particleSystem: {fileID: 3289368542737895258, guid: 189b66c053149e54494fcc585f503693, type: 3}
 --- !u!114 &-5928951916910652877
@@ -276,15 +275,3 @@ MonoBehaviour:
   _isJumping: 0
   _ray: 0.6
   _tagName: PlayerR
---- !u!114 &416427063948500652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8550535456506275526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d1a6d59b8af044482e07537b6ef894, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

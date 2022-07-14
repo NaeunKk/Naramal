@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     protected void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Delete))
+            SceneManager.LoadScene("Stage02");
         Debug.DrawRay(transform.position, Vector2.down * _ray, Color.red);
         PressedOn();
         Debug.DrawRay(transform.position, Vector2.down * _ray, Color.red);
@@ -49,7 +52,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (raycastHit2D.collider == null)
         {
-            Debug.Log("a");
+            //Debug.Log("a");
             _isJumping = false;
         }
     }
@@ -57,9 +60,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(key))
         {
-            transform.position += new Vector3(dir, 0, 0) * _moveSpeed * Time.deltaTime;
+            _rigidJump2D.velocity = new Vector2(dir * _moveSpeed, _rigidJump2D.velocity.y);
         }
-    }   
+        else
+            _rigidJump2D.velocity = new Vector2(0, _rigidJump2D.velocity.y);
+    }
 
     protected void PressedOn()
     {

@@ -6,9 +6,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public int _stage = 0;
+
     private void Awake()
     {
         if(Instance == null)
             Instance = this;
     }
+
+    
 }

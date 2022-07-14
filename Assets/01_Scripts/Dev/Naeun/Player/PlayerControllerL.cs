@@ -12,4 +12,12 @@ public class PlayerControllerL : PlayerController
         JumpLimit();
         Move(KeyCode.A, dir);
     }
+
+    private void Start()
+    {
+        if (GameManager.Instance._stage == 1)
+        {
+            gameObject.transform.position = new Vector3(-7, 38, 0);
+        }
+    }
 }

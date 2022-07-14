@@ -14,4 +14,12 @@ public class PlayerControllerR : PlayerController
         Move(KeyCode.RightArrow, dir);
 
     }
+
+    private void Start()
+    {
+        if (GameManager.Instance._stage == 1)
+        {
+            gameObject.transform.position = new Vector3(6, 38, 0);
+        }
+    }
 }

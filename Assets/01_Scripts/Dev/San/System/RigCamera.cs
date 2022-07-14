@@ -16,10 +16,8 @@ public class RigCamera : MonoBehaviour
 
     private CinemachineVirtualCamera _rigCam;
 
-    private void Awake()
+    private void Start()  
     {
-        _objL = GameObject.Find("L");
-        _objR = GameObject.Find("R");
         _transform = GetComponent<Transform>();
         _rigCam = GetComponent<CinemachineVirtualCamera>();
     }
@@ -41,14 +39,20 @@ public class RigCamera : MonoBehaviour
         float posYR = _objR.transform.position.y;
         float crtMaxPosY = _transform.position.y + halfHeigth;
         float crtMinPosY = _transform.position.y - halfHeigth;
-        if(posYL > crtMaxPosY || posYL < crtMinPosY || posYR > crtMaxPosY || posYR < crtMinPosY)
+        float h = 3f * Time.deltaTime;
+
+        if (posYL > crtMaxPosY + h || posYL < crtMinPosY - h || posYR > crtMaxPosY + h || posYR < crtMinPosY - h)
         {
-            _rigCam.m_Lens.OrthographicSize += 3f * Time.deltaTime;
+            _rigCam.m_Lens.OrthographicSize += h;
         }
-        else if(otho > 5)
+        else if (posYL > crtMaxPosY - h || posYL < crtMinPosY + h || posYR > crtMaxPosY - h || posYR < crtMinPosY + h)
         {
-            _rigCam.m_Lens.OrthographicSize -= 3f * Time.deltaTime;
-            if(_rigCam.m_Lens.OrthographicSize < 5)
+
+        }
+        else if (otho > 5)
+        {
+            _rigCam.m_Lens.OrthographicSize -= h;
+            if (_rigCam.m_Lens.OrthographicSize < 5)
                 _rigCam.m_Lens.OrthographicSize = 5;
         }
     }
