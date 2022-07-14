@@ -7,15 +7,17 @@ public class Stage02 : MonoBehaviour
 {
     private bool _playerR = false;
     private bool _playerL = false;
-    [SerializeField] GameObject L;
-    [SerializeField] GameObject R;
+    GameObject L;
+    GameObject R;
 
     BoxCollider2D _stage2BoxCollider;
     UIManager _ui;
 
 
-    private void Awake()
+    private void Start()
     {
+        L = GameManager.Instance._playerL;
+        R = GameManager.Instance._playerR;
         _ui = GameObject.Find("Manager/UIManager").GetComponent<UIManager>();
         _stage2BoxCollider = GetComponent<BoxCollider2D>();
     }

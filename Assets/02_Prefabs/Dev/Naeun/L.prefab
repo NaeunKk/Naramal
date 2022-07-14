@@ -150,7 +150,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7799628609986024626, guid: 31631164e9d920542a96e71165e4baf9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   _keyL: 100
   _keyR: 276
   _objL: {fileID: 8550535456506275526}
-  _objR: {fileID: 2298287990164290571, guid: 7c0f5d4ffa06ff94c97a1d836a11d055, type: 3}
+  _objR: {fileID: 0}
   _skillCoolTime: 0.3
   _particleSystem: {fileID: 3289368542737895258, guid: 189b66c053149e54494fcc585f503693, type: 3}
 --- !u!114 &-5928951916910652877

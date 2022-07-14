@@ -16,10 +16,10 @@ public class RigCamera : MonoBehaviour
 
     private CinemachineVirtualCamera _rigCam;
 
-    private void Awake()
+    private void Start()  
     {
-        _objL = GameObject.Find("L");
-        _objR = GameObject.Find("R");
+        _objL = GameManager.Instance._playerL;
+        _objR = GameManager.Instance._playerR;
         _transform = GetComponent<Transform>();
         _rigCam = GetComponent<CinemachineVirtualCamera>();
     }
