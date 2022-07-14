@@ -27,15 +27,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] private float _endPosY; // 최종 지점의 Y좌표
     private float _crtPosY; // 현재 Y좌표
 
-    public Transform _trmL; // L의 위치
-    public Transform _trmR; // R의 위치
+    [SerializeField] private Transform _trmL; // L의 위치
+    [SerializeField] private Transform _trmR; // R의 위치
 
     [Header("현재 진행률 표시할 텍스트")]
     public TextMeshProUGUI crtProgressTxt; // 현재 진행률 표시할 텍스트
     #endregion
 
-    private void Awake()
+    private void Start()
     {
+        _option = GameObject.Find("Manager/Canvas/Option").GetComponent<Image>();
+        _slider = GameObject.Find("Manager/Canvas/Option/Sound").GetComponent<Slider>();
+        crtProgressTxt = GameObject.Find("Manager/Canvas/Progress").GetComponent<TextMeshProUGUI>();
         _trmL = GameObject.FindGameObjectWithTag("PlayerL").GetComponent<Transform>();
         _trmR = GameObject.FindGameObjectWithTag("PlayerR").GetComponent<Transform>();
     }
@@ -109,5 +112,11 @@ public class UIManager : MonoBehaviour
     public void ExitGameButton()
     {
         Application.Quit();
+    }
+
+    public void LRTrm()
+    {
+        _trmL = GameObject.FindGameObjectWithTag("PlayerL").GetComponent<Transform>();
+        _trmR = GameObject.FindGameObjectWithTag("PlayerR").GetComponent<Transform>();
     }
 }

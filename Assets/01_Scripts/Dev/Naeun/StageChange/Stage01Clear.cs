@@ -14,7 +14,7 @@ public class Stage01Clear : MonoBehaviour
 
     private void Awake()
     {
-        _ui = GameObject.Find("Manager/UIManager").GetComponent<UIManager>();
+        _ui = GameObject.Find("UIManager").GetComponent<UIManager>();
         _L = GameObject.Find("L");
         _R = GameObject.Find("R");
     }
@@ -37,6 +37,7 @@ public class Stage01Clear : MonoBehaviour
             _L.transform.position = new Vector3(-8, 37, 0);
             _R.transform.position = new Vector3(5, 37, 0);
             SceneManager.LoadScene("P");
+            _ui.LRTrm();
         }
     }
 

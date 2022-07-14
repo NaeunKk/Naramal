@@ -15,7 +15,7 @@ public class Stage03Clear : MonoBehaviour
     {
         _L = GameObject.Find("L");
         _R = GameObject.Find("R");
-        _ui = GameObject.Find("Manager/UIManager").GetComponent<UIManager>();
+        _ui = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
 
@@ -31,6 +31,7 @@ public class Stage03Clear : MonoBehaviour
     {
         if (_playerL == true && _playerR == true)
         {
+            GameManager.Instance._stage += 1;
             _ui._audioSource.Stop();
             _ui.crtProgressTxt.gameObject.SetActive(false);
             SceneManager.LoadScene("Ending");

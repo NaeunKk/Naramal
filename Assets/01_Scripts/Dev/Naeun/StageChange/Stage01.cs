@@ -17,7 +17,7 @@ public class Stage01 : MonoBehaviour
     private void Awake()
     {
         _stage1BoxCollider = GetComponent<BoxCollider2D>();
-        _ui = GameObject.Find("Manager/UIManager").GetComponent<UIManager>();
+        _ui = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -33,8 +33,6 @@ public class Stage01 : MonoBehaviour
         if(_playerL == true && _playerR == true)
         {
             _ui.crtProgressTxt.gameObject.SetActive(false);
-            L.transform.position = new Vector3(203, 20, 0);
-            R.transform.position = new Vector3(206, 20, 0);
             SceneManager.LoadScene("Stage01");
             L.transform.position = new Vector3(203, 20, 0);
             R.transform.position = new Vector3(206, 20, 0);
