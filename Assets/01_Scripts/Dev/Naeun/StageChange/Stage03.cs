@@ -10,18 +10,21 @@ public class Stage03 : MonoBehaviour
     [SerializeField] GameObject L;
     [SerializeField] GameObject R;
 
+    UIManager _ui;
+
     BoxCollider2D _stage3BoxCollider;
 
     private void Awake()
     {
+        _ui = GameObject.Find("Manager/UIManager").GetComponent<UIManager>();
         _stage3BoxCollider = GetComponent<BoxCollider2D>();
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("PlayerR"))
+        if (collision.gameObject.CompareTag("PlayerR"))
             _playerR = true;
-        if (collision.collider.CompareTag("PlayerL"))
+        if (collision.gameObject.CompareTag("PlayerL"))
             _playerL = true;
     }
 
@@ -29,9 +32,10 @@ public class Stage03 : MonoBehaviour
     {
         if (_playerL == true && _playerR == true)
         {
-            SceneManager.LoadScene("Stage03");
-            L.transform.position = new Vector3(-3, 0, 0);
-            R.transform.position = new Vector3(3, 0, 0);
+        _ui.gameObject.SetActive(false);
+        SceneManager.LoadScene("Stage03");
+        L.transform.position = new Vector3(-3, -4, 0);
+        R.transform.position = new Vector3(3, -4, 0);
         }
         deleteBar();
 

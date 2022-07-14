@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/00_Scenes/Main/FakeMenu.unity
     guid: 8b342f709aef77a4c949bb5d516b9601
   - enabled: 1
+    path: Assets/00_Scenes/Main/Intro.unity
+    guid: e3039a431237df54cb5a2ffc03d29ee8
+  - enabled: 1
     path: Assets/00_Scenes/Main/Menu.unity
     guid: 02329456d84555440a636c97b1f7f161
   - enabled: 1
@@ -23,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00_Scenes/Main/Stage03.unity
     guid: 2071a0f66e62ed7499668e980b5dcb3c
+  - enabled: 1
+    path: Assets/00_Scenes/Main/Ending.unity
+    guid: 0d316aa1acddb434bb5b73ef6250eac1
   m_configObjects: {}

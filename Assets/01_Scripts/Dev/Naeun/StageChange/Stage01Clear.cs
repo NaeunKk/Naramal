@@ -10,8 +10,11 @@ public class Stage01Clear : MonoBehaviour
     GameObject _L;
     GameObject _R;
 
+    UIManager _ui;
+
     private void Awake()
     {
+        _ui = GameObject.Find("Manager/UIManager").GetComponent<UIManager>();
         _L = GameObject.Find("L");
         _R = GameObject.Find("R");
     }
@@ -30,6 +33,7 @@ public class Stage01Clear : MonoBehaviour
         if (_playerL == true && _playerR == true)
         {
             
+            _ui.crtProgressTxt.gameObject.SetActive(true);
             _L.transform.position = new Vector3(-8, 37, 0);
             _R.transform.position = new Vector3(5, 37, 0);
             SceneManager.LoadScene("P");
