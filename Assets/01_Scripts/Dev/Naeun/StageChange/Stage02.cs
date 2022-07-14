@@ -16,8 +16,6 @@ public class Stage02 : MonoBehaviour
 
     private void Start()
     {
-        L = GameManager.Instance._playerL;
-        R = GameManager.Instance._playerR;
         _ui = GameObject.Find("Manager/UIManager").GetComponent<UIManager>();
         _stage2BoxCollider = GetComponent<BoxCollider2D>();
     }

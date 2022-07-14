@@ -18,8 +18,6 @@ public class RigCamera : MonoBehaviour
 
     private void Start()  
     {
-        _objL = GameManager.Instance._playerL;
-        _objR = GameManager.Instance._playerR;
         _transform = GetComponent<Transform>();
         _rigCam = GetComponent<CinemachineVirtualCamera>();
     }

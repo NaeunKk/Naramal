@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 1949322492}
   - component: {fileID: 1949322493}
   - component: {fileID: -5928951916910652877}
-  - component: {fileID: 416427063948500652}
   m_Layer: 8
   m_Name: L
   m_TagString: PlayerL
@@ -276,15 +275,3 @@ MonoBehaviour:
   _isJumping: 0
   _ray: 0.6
   _tagName: PlayerR
---- !u!114 &416427063948500652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8550535456506275526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d1a6d59b8af044482e07537b6ef894, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
