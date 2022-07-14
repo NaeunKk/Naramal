@@ -34,8 +34,8 @@ public class Stage03Clear : MonoBehaviour
             _ui._audioSource.Stop();
             _ui.crtProgressTxt.gameObject.SetActive(false);
             SceneManager.LoadScene("Ending");
-            PoolingManager.Instance.Push(_R);
-            PoolingManager.Instance.Push(_L);
+            _L.transform.position = new Vector3(100, 100, -100);
+            _R.transform.position = new Vector3(100, 100, -100);
         }
     }
 

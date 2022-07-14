@@ -44,22 +44,21 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !_optionCheck)
         {
-            Debug.Log("A");
             OptionOpen();
-            _optionCheck = true;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && _optionCheck)
         {
             OptionClose();
             _optionCheck = false;
         }
-        CurrentProgress();
 
+        CurrentProgress();
     }
 
     public void OptionOpen()
     {
         _option.gameObject.SetActive(true);
+        _optionCheck = true;
     }
     public void OptionClose()
     {

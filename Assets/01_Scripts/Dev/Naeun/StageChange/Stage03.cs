@@ -32,7 +32,7 @@ public class Stage03 : MonoBehaviour
     {
         if (_playerL == true && _playerR == true)
         {
-        _ui.gameObject.SetActive(false);
+        _ui.crtProgressTxt.gameObject.SetActive(false);
         SceneManager.LoadScene("Stage03");
         L.transform.position = new Vector3(-3, -4, 0);
         R.transform.position = new Vector3(3, -4, 0);

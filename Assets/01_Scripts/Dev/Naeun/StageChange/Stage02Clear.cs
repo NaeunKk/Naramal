@@ -10,7 +10,7 @@ public class Stage02Clear : MonoBehaviour
     GameObject _L;
     GameObject _R;
 
-    UIManager _ui;
+    [SerializeField]UIManager _ui;
 
     private void Awake()
     {
