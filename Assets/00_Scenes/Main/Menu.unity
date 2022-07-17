@@ -743,7 +743,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: dd4625012a7bddd46b21f66c01e6e872, type: 3}
-    m_FontSize: 69
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -754,11 +754,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "L \uBC84\uD2BC\uC740 A \uD0A4\uB97C \uB20C\uB7EC \uC67C\uCABD\uC73C\uB85C\uB9CC,
-    \nR \uBC84\uD2BC\uC740 \uC624\uB978\uCABD \uD654\uC0B4\uD45C\uB97C \uB20C\uB7EC
-    \uC624\uB978\uCABD\uC73C\uB85C\uB9CC \n\uC6C0\uC9C1\uC77C \uC218 \uC788\uC2B5\uB2C8\uB2E4.\nD
-    \uD0A4\uB098 \uC67C\uCABD \uD654\uC0B4\uD45C\uB97C \uB204\uB974\uBA74\nL \uBC84\uD2BC\uACFC
-    R \uBC84\uD2BC\uC758 \uC704\uCE58\uAC00 \uBC14\uB01D\uB2C8\uB2E4.\n\uC990\uAC9C!"
+  m_Text: "L \uBC84\uD2BC\uC740 A \uD0A4\uB97C \uB20C\uB7EC \uC67C\uCABD\uC73C\uB85C\uB9CC
+    \uC6C0\uC9C1\uC774\uACE0\nW \uD0A4\uB97C \uB20C\uB7EC \uC810\uD504, \nR \uBC84\uD2BC\uC740
+    \uC624\uB978\uCABD \uD654\uC0B4\uD45C\uB97C \uB20C\uB7EC \uC624\uB978\uCABD\uC73C\uB85C\uB9CC
+    \n\uC6C0\uC9C1\uC774\uACE0\n\uC704\uCABD \uD654\uC0B4\uD45C\uB97C \uB20C\uB7EC
+    \uC810\uD504\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\nD \uD0A4\uB098 \uC67C\uCABD
+    \uD654\uC0B4\uD45C\uB97C \uB204\uB974\uBA74\nL \uBC84\uD2BC\uACFC R \uBC84\uD2BC\uC758
+    \uC704\uCE58\uAC00 \uBC14\uB01D\uB2C8\uB2E4.\n\uC990\uAC9C!"
 --- !u!222 &252209279
 CanvasRenderer:
   m_ObjectHideFlags: 0
