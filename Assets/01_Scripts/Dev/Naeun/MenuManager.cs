@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
-    public static GameManager Instance;
     #region option
     [Header("옵션")]
     [SerializeField] private Image _option;
@@ -19,20 +17,6 @@ public class GameManager : MonoBehaviour
     public AudioSource _audioSource;
     [SerializeField] Slider _slider;
     #endregion
-
-    private TextMeshProUGUI crtProgressTxt; // 현재 진행률 표시할 텍스트
-
-    private int test = 0;
-
-    public int _stage
-    {
-        get => test;
-        set
-        {
-            Debug.Log($"스테이지 값 변경 {value}");
-            test = value;
-        }
-    }
 
     private void Update()
     {
@@ -47,18 +31,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-    }
-
-    private void Start()
-    {
-        _option = GameObject.Find("Manager/Canvas/Option").GetComponent<Image>();
-        _slider = GameObject.Find("Manager/Canvas/Option/Sound").GetComponent<Slider>();
-    }
-
     public void OptionOpen()
     {
         _option.gameObject.SetActive(true);
@@ -71,18 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void GoToInGame()
     {
-        crtProgressTxt.gameObject.SetActive(true);
         SceneManager.LoadScene("P");
-    }
-
-    public void GoToIntro()
-    {
-        SceneManager.LoadScene("Intro");
-    }
-
-    public void GoToMenu()
-    {
-        SceneManager.LoadScene("Menu");
     }
 
     public void Volume()

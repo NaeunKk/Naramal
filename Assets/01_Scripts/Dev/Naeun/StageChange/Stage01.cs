@@ -20,6 +20,11 @@ public class Stage01 : MonoBehaviour
         _ui = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
+    private void Start()
+    {
+        _ui.LRTrm();
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("PlayerR"))

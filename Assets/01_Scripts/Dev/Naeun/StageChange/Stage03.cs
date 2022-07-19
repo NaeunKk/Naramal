@@ -16,7 +16,6 @@ public class Stage03 : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance._stage = 0;
         _ui = GameObject.Find("UIManager").GetComponent<UIManager>();
         _stage3BoxCollider = GetComponent<BoxCollider2D>();
     }
@@ -33,15 +32,11 @@ public class Stage03 : MonoBehaviour
     {
         if (_playerL == true && _playerR == true)
         {
-            ChangeStage03();
+            GameManager.Instance._stage = 0;
+            _ui.crtProgressTxt.gameObject.SetActive(false);
+            SceneManager.LoadScene("Stage03");
         }
         deleteBar();
-    }
-
-    void ChangeStage03()
-    {
-        _ui.crtProgressTxt.gameObject.SetActive(false);
-        SceneManager.LoadScene("Stage03");
     }
 
     private void deleteBar()

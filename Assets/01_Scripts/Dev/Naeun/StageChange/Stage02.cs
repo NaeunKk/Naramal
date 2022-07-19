@@ -22,7 +22,7 @@ public class Stage02 : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance._stage = 0;
+        _ui.LRTrm();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -39,6 +39,7 @@ public class Stage02 : MonoBehaviour
         {
             _ui.crtProgressTxt.gameObject.SetActive(false);
             SceneManager.LoadScene("Stage02");
+            GameManager.Instance._stage = 0;
         }
         DeleteBar();
 

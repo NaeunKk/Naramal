@@ -16,11 +16,13 @@ public class PlayerControllerL : PlayerController
 
     private void Start()
     {
+        Debug.Log(GameManager.Instance._stage);
+
         if (GameManager.Instance._stage == 1)
-            gameObject.transform.position = new Vector3(-7, 38, 0);
+            transform.position = new Vector3(-7, 38, 0);
         else if (GameManager.Instance._stage == 2)
-            gameObject.transform.position = new Vector3(6, 100, 0);
+            transform.position = new Vector3(6, 100, 0);
         else if (GameManager.Instance._stage == 3)
-            gameObject.transform.position = new Vector3(100, 100, -100);
+            transform.position = new Vector3(100, 100, -100);
     }
 }

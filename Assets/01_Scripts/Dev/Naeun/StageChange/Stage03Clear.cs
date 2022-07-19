@@ -31,8 +31,7 @@ public class Stage03Clear : MonoBehaviour
     {
         if (_playerL == true && _playerR == true)
         {
-            GameManager.Instance._stage = 3;
-            _ui._audioSource.Stop();
+            GameManager.Instance._audioSource.Stop();
             _ui.crtProgressTxt.gameObject.SetActive(false);
             SceneManager.LoadScene("Ending");
         }
