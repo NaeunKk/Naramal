@@ -10,7 +10,7 @@ public class Stage02 : MonoBehaviour
     [SerializeField] GameObject L;
     [SerializeField] GameObject R;
 
-    public UIManager _ui;
+    UIManager _ui;
 
     BoxCollider2D _stage2BoxCollider;
 
@@ -18,6 +18,11 @@ public class Stage02 : MonoBehaviour
     {
         _stage2BoxCollider = GetComponent<BoxCollider2D>();
         _ui = GameObject.Find("UIManager").GetComponent<UIManager>();
+    }
+
+    private void Start()
+    {
+        GameManager.Instance._stage = 0;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -34,8 +39,6 @@ public class Stage02 : MonoBehaviour
         {
             _ui.crtProgressTxt.gameObject.SetActive(false);
             SceneManager.LoadScene("Stage02");
-            L.transform.position = new Vector3(-8, -1, 0);
-            R.transform.position = new Vector3(-6, -1, 0);
         }
         DeleteBar();
 

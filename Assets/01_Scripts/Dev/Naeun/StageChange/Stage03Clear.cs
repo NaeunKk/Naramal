@@ -31,12 +31,10 @@ public class Stage03Clear : MonoBehaviour
     {
         if (_playerL == true && _playerR == true)
         {
-            GameManager.Instance._stage += 1;
+            GameManager.Instance._stage = 3;
             _ui._audioSource.Stop();
             _ui.crtProgressTxt.gameObject.SetActive(false);
             SceneManager.LoadScene("Ending");
-            _L.transform.position = new Vector3(100, 100, -100);
-            _R.transform.position = new Vector3(100, 100, -100);
         }
     }
 

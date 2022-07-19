@@ -32,10 +32,8 @@ public class Stage01Clear : MonoBehaviour
     {
         if (_playerL == true && _playerR == true)
         {
-            GameManager.Instance._stage += 2;
+            GameManager.Instance._stage = 1;
             _ui.crtProgressTxt.gameObject.SetActive(true);
-            _L.transform.position = new Vector3(-8, 37, 0);
-            _R.transform.position = new Vector3(5, 37, 0);
             SceneManager.LoadScene("P");
             _ui.LRTrm();
         }

@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 8550535456506275578}
   - component: {fileID: 1949322492}
   - component: {fileID: 1949322493}
-  - component: {fileID: -5928951916910652877}
+  - component: {fileID: 5511704364525989775}
   m_Layer: 8
   m_Name: L
   m_TagString: PlayerL
@@ -258,7 +258,7 @@ MonoBehaviour:
   _objR: {fileID: 0}
   _skillCoolTime: 0.3
   _particleSystem: {fileID: 3289368542737895258, guid: 189b66c053149e54494fcc585f503693, type: 3}
---- !u!114 &-5928951916910652877
+--- !u!114 &5511704364525989775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -139,13 +139,14 @@ GameObject:
   - component: {fileID: 36678812}
   - component: {fileID: 36678811}
   - component: {fileID: 36678814}
+  - component: {fileID: 36678813}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &36678811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -211,6 +212,20 @@ Transform:
   m_Father: {fileID: 1598594229}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &36678813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36678810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff253ad141112841ac330b60e159089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  L: {fileID: 1967493730}
+  R: {fileID: 74248801}
 --- !u!61 &36678814
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -741,8 +756,8 @@ Transform:
   m_LocalPosition: {x: 3.5976167, y: -75.0338, z: -0.30210495}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 1812047953}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &290704969
 GameObject:
@@ -2882,7 +2897,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1059046123
 GameObject:
@@ -4036,12 +4051,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1726459928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ff253ad141112841ac330b60e159089, type: 3}
+  m_Script: {fileID: 11500000, guid: 803c174755c9cb0428744ba4b016bd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   L: {fileID: 1967493730}
   R: {fileID: 74248801}
-  _ui: {fileID: 0}
 --- !u!61 &1726459931
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4329,8 +4343,9 @@ Transform:
   - {fileID: 1876565004}
   - {fileID: 502081626}
   - {fileID: 351851683}
+  - {fileID: 262206196}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1822400018
 GameObject:

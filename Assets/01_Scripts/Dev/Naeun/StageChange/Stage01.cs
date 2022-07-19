@@ -10,7 +10,7 @@ public class Stage01 : MonoBehaviour
     [SerializeField] GameObject L;
     [SerializeField] GameObject R;
 
-    public UIManager _ui;
+    UIManager _ui;
 
     BoxCollider2D _stage1BoxCollider;
 
@@ -34,8 +34,6 @@ public class Stage01 : MonoBehaviour
         {
             _ui.crtProgressTxt.gameObject.SetActive(false);
             SceneManager.LoadScene("Stage01");
-            L.transform.position = new Vector3(203, 20, 0);
-            R.transform.position = new Vector3(206, 20, 0);
         }
         DeleteBar();
 
